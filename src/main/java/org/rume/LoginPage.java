@@ -10,8 +10,8 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 public class LoginPage extends BasePage {
     private static final String LOGIN_PAGE_SUFIX = "/users/login";
 
-    private static final String USER = "testingDemos";
-    private static final String PASS = "testing";
+    private static final String USER = "alfa159";
+    private static final String PASS = "Alfa159";
 
     @FindBy(css = "p.h4")
     private WebElement loginFormTitle;
