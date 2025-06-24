@@ -3,9 +3,11 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/Skillo/MavenTestNgDemo">
         <classes>
-            <class name="org.rume.LoginTestCase">
+            <class name="org.rume.LoginPageTests">
                 <methods>
-                    <include name="UserCanLogin"/>
+                    <include name="testLoginPageTitleIsDisplayed"/>
+                    <include name="testLoginWithValidCredentials"/>
+                    <include name="testLoginWithInvalidCredentials"/>
                 </methods>
             </class>
         </classes>
