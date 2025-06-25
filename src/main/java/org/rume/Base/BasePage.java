@@ -1,5 +1,5 @@
 
-package org.rume;
+package org.rume.Base;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.TimeoutException;
