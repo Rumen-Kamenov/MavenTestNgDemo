@@ -1,11 +1,10 @@
-package org.rume;
+package org.rume.Login;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import org.openqa.selenium.By;
-import org.openqa.selenium.WebElement;
+import org.rume.Base.BaseTest;
+import org.rume.Base.LoginPage;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
 
@@ -21,7 +20,7 @@ public class LoginPageTests extends BaseTest {
         loginPage.navigateToLoginPage();
     }
 
-    @Test(priority = 1)
+    @Test
     public void testLoginPageTitleIsDisplayed() {
         log.info("Verifying login page header is shown");
         Assert.assertTrue(loginPage.isLoginFormHeaderTextShown(), "Login form header is NOT shown");
