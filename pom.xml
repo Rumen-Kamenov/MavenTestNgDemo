@@ -28,6 +28,11 @@
         <scope>test</scope>
       </dependency>
 
+      <dependency>
+          <groupId>org.slf4j</groupId>
+          <artifactId>slf4j-api</artifactId>
+          <version>2.0.13</version>
+      </dependency>
       <!--   Logging     -->
       <dependency>
           <groupId>org.apache.logging.log4j</groupId>
@@ -36,10 +41,22 @@
       </dependency>
 
       <dependency>
-          <groupId>org.apache.logging.log4j</groupId>
-          <artifactId>log4j-core</artifactId>
-          <version>2.23.1</version>
+          <groupId>commons-io</groupId>
+          <artifactId>commons-io</artifactId>
+          <version>2.16.1</version>
       </dependency>
 
   </dependencies>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <configuration>
+                    <source>9</source>
+                    <target>9</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
 </project>
