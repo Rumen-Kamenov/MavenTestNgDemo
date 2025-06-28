@@ -27,7 +27,7 @@ public abstract class BasePage {
     public void navigateTo(String pageURLSUFIX) {
         String urlToBeLoaded = BASE_URL+pageURLSUFIX;
         driver.get(urlToBeLoaded);
-        log.info("# CONFIRM: The user has naivated to "+ urlToBeLoaded);
+        log.info("# CONFIRM: The user has navigated to "+ urlToBeLoaded);
     }
 
     public void clickOn(WebElement element) {

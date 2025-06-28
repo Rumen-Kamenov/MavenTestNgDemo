@@ -34,15 +34,14 @@ public class BaseTest {
 
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(15));
         driver.manage().timeouts().implicitlyWait(Duration.ofSeconds(7));
-        //driver.get(BASE_URL);
+
     }
 
-    @AfterMethod
-    public void killBrowser() {
-        if (driver != null) {
-            log.info("Closing driver");
-            driver.quit();
-        }
+    @AfterMethod(alwaysRun = true)
+    public void tearDown(ITestResult testResult) throws IOException {
+        takeScreenshot(testResult);
+        //log.info("Closing driver");
+        driver.quit();
     }
 
     private void takeScreenshot(ITestResult testResult) throws IOException {
