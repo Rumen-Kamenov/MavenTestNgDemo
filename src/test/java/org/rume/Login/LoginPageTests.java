@@ -4,6 +4,7 @@ import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
 import org.rume.Base.BaseTest;
+import org.rume.Base.HomePage;
 import org.rume.Base.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.BeforeMethod;
@@ -50,7 +51,7 @@ public class LoginPageTests extends BaseTest {
     }
 
     @Test
-    public void LoginButtonLabelText() {
+    public void CheckLoginButtonLabelText() {
         loginPage.getLoginFormSubmitButtonlabel();
 
         String buttonLabel = loginPage.getLoginFormSubmitButtonlabel();
@@ -59,9 +60,32 @@ public class LoginPageTests extends BaseTest {
 
     @Test
     public void RememberMeCheckboxFunctionality() {
+        HomePage homePage = new HomePage(driver, log);
+        log.info("STEP 1: Open Skillo Home Page");
+        homePage.openHomePage();
+
+        log.info("STEP 2: Navigate to Login Page from navigation bar");
+        homePage.clickOnLoginNavBar();
+
+        LoginPage loginPage = new LoginPage(driver, log);
+
+        log.info("STEP 3: Click on 'Remember Me' checkbox");
         loginPage.clickRememberMeCheckbox();
 
-        // Assert checkbox is selected
-        Assert.assertTrue(loginPage.isRememberMeSelected(), "Remember Me checkbox should be selected");
+        log.info("STEP 4: Verify the 'Remember Me' checkbox is selected");
+        Assert.assertTrue(loginPage.isRememberMeSelected(), "'Remember Me' checkbox should be selected.");
+    }
+
+
+    @Test
+    public void verifyUsernameFieldPlaceholderText() {
+        HomePage homePage = new HomePage(driver, log);
+        homePage.openHomePage();
+        homePage.clickOnLoginNavBar();
+
+        LoginPage loginPage = new LoginPage(driver, log);
+        log.info("STEP 1: Get placeholder text for username field");
+        String actualPlaceholder = loginPage.getUsernamePlaceHolderText();
+        Assert.assertEquals(actualPlaceholder, "Username or email");
     }
 }
