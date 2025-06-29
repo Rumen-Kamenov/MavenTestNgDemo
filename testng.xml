@@ -8,8 +8,9 @@
                     <include name="LoginPageTitleIsDisplayed"/>
                     <include name="LoginWithValidCredentials"/>
                     <include name="LoginWithInvalidCredentials"/>
-                    <include name="LoginButtonLabelText"/>
+                    <include name="CheckLoginButtonLabelText"/>
                     <include name="RememberMeCheckboxFunctionality"/>
+                    <include name="verifyUsernameFieldPlaceholderText"/>
                 </methods>
             </class>
         </classes>
