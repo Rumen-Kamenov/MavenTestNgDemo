@@ -43,7 +43,7 @@ Nikolay Nikolov - supervision
 4. [UI Summary Report]( )
 
 ## IV. USEFUL LINKS
-1. DEV Project - http://training.skillo-bg.com:4300/users/login
+1. DEV Project - (http://training.skillo-bg.com:4300/posts/all)
 2. Bug Tracking System
 3. Full QA Documentation
 4. Manual Test Runs
