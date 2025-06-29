@@ -56,11 +56,11 @@ Nikolay Nikolov - supervision
 To be able to run the project on localhost and run the test automations, the following programs need to be present on your machine:
 
 - Windows 11 operating system - Go to IntelliJ -> Click on testng.xml file -> Press right click mouse button to run the tests.
-- OPEN JDK 23
+- OPEN JDK 24.0.1
 - IntelliJ IDEA Ultimate Edition 2023.1.3 or later
 - MAVEN Command Line
-- Chrome latest version
-- Selenium WebDriver
+- Chrome latest version - Version 137.0.7151.122 (Official Build) (64-bit)
+- Selenium WebDriver 4.27.0
 
 ### __2. Running the automations__
 
