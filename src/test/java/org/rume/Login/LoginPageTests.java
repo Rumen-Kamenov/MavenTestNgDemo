@@ -2,7 +2,7 @@ package org.rume.Login;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
-import org.openqa.selenium.By;
+
 import org.rume.Base.BaseTest;
 import org.rume.Base.LoginPage;
 import org.testng.Assert;
@@ -59,12 +59,9 @@ public class LoginPageTests extends BaseTest {
 
     @Test
     public void RememberMeCheckboxFunctionality() {
-        
         loginPage.clickRememberMeCheckbox();
 
         // Assert checkbox is selected
         Assert.assertTrue(loginPage.isRememberMeSelected(), "Remember Me checkbox should be selected");
     }
-
-
 }
