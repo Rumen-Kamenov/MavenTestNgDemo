@@ -15,7 +15,7 @@ import java.time.Duration;
 
 public class BaseTest {
     protected final String BASE_URL = "http://training.skillo-bg.com:4300/";
-    public static final String TEST_RESOURCES_DIR = "D:\\Skillo\\MavenTestNgDemo\\src\\test\\resources";
+    public static final String TEST_RESOURCES_DIR = "D:\\Skillo\\MavenTestNgDemo\\src\\test\\resources\\";
     public static final String SCREENSHOTS_DIR = TEST_RESOURCES_DIR.concat("screenshots\\");
     public static final String DOWNLOAD_DIR = TEST_RESOURCES_DIR.concat("download\\");
     public static final String REPORTS_DIR = TEST_RESOURCES_DIR.concat("reports\\");
@@ -40,8 +40,8 @@ public class BaseTest {
     @AfterMethod(alwaysRun = true)
     public void tearDown(ITestResult testResult) throws IOException {
         takeScreenshot(testResult);
-        //log.info("Closing driver");
         driver.quit();
+        //log.info("Closing driver");
     }
 
     private void takeScreenshot(ITestResult testResult) throws IOException {
