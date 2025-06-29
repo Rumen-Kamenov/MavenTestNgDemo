@@ -5,9 +5,11 @@
         <classes>
             <class name="org.rume.Login.LoginPageTests">
                 <methods>
-                    <include name="testLoginPageTitleIsDisplayed"/>
-                    <include name="testLoginWithValidCredentials"/>
-                    <include name="testLoginWithInvalidCredentials"/>
+                    <include name="LoginPageTitleIsDisplayed"/>
+                    <include name="LoginWithValidCredentials"/>
+                    <include name="LoginWithInvalidCredentials"/>
+                    <include name="LoginButtonLabelText"/>
+                    <include name="RememberMeCheckboxFunctionality"/>
                 </methods>
             </class>
         </classes>
