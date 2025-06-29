@@ -33,7 +33,7 @@ __I-skillo__ is a web application that allows you to connect and communicate wit
 ## II. QA TEAM MEMBERS
 
 ### QA Team:
-Skillo Best Student Rumen Kamenov<br/>
+Skillo Student - Rumen Kamenov<br/>
 Nikolay Nikolov - supervision
 
 ## III. DELIVERABLES
