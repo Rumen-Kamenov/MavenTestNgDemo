@@ -2,6 +2,7 @@ package org.rume.Login;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
+import org.openqa.selenium.By;
 import org.rume.Base.BaseTest;
 import org.rume.Base.LoginPage;
 import org.testng.Assert;
@@ -21,13 +22,13 @@ public class LoginPageTests extends BaseTest {
     }
 
     @Test
-    public void testLoginPageTitleIsDisplayed() {
+    public void LoginPageTitleIsDisplayed() {
         log.info("Verifying login page header is shown");
         Assert.assertTrue(loginPage.isLoginFormHeaderTextShown(), "Login form header is NOT shown");
     }
 
     @Test
-    public void testLoginWithValidCredentials() {
+    public void LoginWithValidCredentials() {
         loginPage.loginWithTestUser();
 
         // Assert for succsesful login
@@ -37,8 +38,7 @@ public class LoginPageTests extends BaseTest {
     }
 
     @Test
-    public void testLoginWithInvalidCredentials() {
-
+    public void LoginWithInvalidCredentials() {
         loginPage.provideUser("invalidUser");
         loginPage.providePass("wrongPass");
 
@@ -48,4 +48,23 @@ public class LoginPageTests extends BaseTest {
         String errorMessage = loginPage.getLoginPageToastUnssecsesfullMsg();
         Assert.assertTrue(errorMessage.contains("Wrong username or password!"), "Error message for invalid login was not displayed.");
     }
+
+    @Test
+    public void LoginButtonLabelText() {
+        loginPage.getLoginFormSubmitButtonlabel();
+
+        String buttonLabel = loginPage.getLoginFormSubmitButtonlabel();
+        Assert.assertEquals(buttonLabel, "Sign in", "Login button label is incorrect");
+    }
+
+    @Test
+    public void RememberMeCheckboxFunctionality() {
+        
+        loginPage.clickRememberMeCheckbox();
+
+        // Assert checkbox is selected
+        Assert.assertTrue(loginPage.isRememberMeSelected(), "Remember Me checkbox should be selected");
+    }
+
+
 }
