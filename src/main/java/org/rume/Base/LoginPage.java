@@ -31,6 +31,10 @@ public class LoginPage extends BasePage {
     @FindBy(xpath = "//div[contains(@aria-label,\"Wrong username or password!\")]")
     private WebElement wrongSignInMessage;
 
+    @FindBy(xpath = "//input[@type='checkbox' and @formcontrolname='rememberMe']")
+    private WebElement rememberMeCheckbox;
+
+
     public LoginPage(WebDriver driver, Logger log) {
         super(driver, log);
         PageFactory.initElements(driver,this);
@@ -91,4 +95,13 @@ public class LoginPage extends BasePage {
         return isElementPresented(loginFormTitle);
     }
 
+    public void clickRememberMeCheckbox() {
+        wait.until(ExpectedConditions.elementToBeClickable(rememberMeCheckbox));
+        rememberMeCheckbox.click();
+    }
+
+    public boolean isRememberMeSelected() {
+        wait.until(ExpectedConditions.visibilityOf(rememberMeCheckbox));
+        return rememberMeCheckbox.isSelected();
+    }
 }
