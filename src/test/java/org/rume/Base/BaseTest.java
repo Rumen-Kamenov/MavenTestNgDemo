@@ -13,6 +13,8 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
+import static org.apache.commons.io.FileUtils.cleanDirectory;
+
 public class BaseTest {
     protected final String BASE_URL = "http://training.skillo-bg.com:4300/";
     public static final String TEST_RESOURCES_DIR = "D:\\Skillo\\MavenTestNgDemo\\src\\test\\resources\\";
@@ -23,6 +25,12 @@ public class BaseTest {
 
     protected Logger log;
     protected WebDriver driver;
+
+    @BeforeSuite
+    protected final void setupTestSuite() throws IOException {
+        cleanDirectory(REPORTS_DIR);
+        cleanDirectory(SCREENSHOTS_DIR);
+    }
 
     @Parameters({ "browser" })
     @BeforeMethod
@@ -41,8 +49,13 @@ public class BaseTest {
     public void tearDown(ITestResult testResult) throws IOException {
         takeScreenshot(testResult);
         driver.quit();
-        //log.info("Closing driver");
+
     }
+
+    @AfterSuite
+    public void cleanFiles() throws IOException {
+        cleanDirectory(DOWNLOAD_DIR);
+    };
 
     private void takeScreenshot(ITestResult testResult) throws IOException {
         if (ITestResult.FAILURE == testResult.getStatus()) {
@@ -53,4 +66,25 @@ public class BaseTest {
             FileUtils.copyFile(screenshot, new File(SCREENSHOTS_DIR.concat(testName).concat(".jpg")));
         }
     }
+
+    private void cleanDirectory(String directoryPath) throws IOException {
+        System.out.println("____________________________________________________________");
+        File directory = new File(directoryPath);
+
+        //If directory is not shown after git clone of the repo this code will build the path
+        if (!directory.exists()) {
+            FileUtils.forceMkdir(directory);
+            System.out.println("Created folder with path: "+ directoryPath);
+        };
+
+        System.out.println("Deleting not needed files from folder with path: "+ directoryPath);
+        FileUtils.cleanDirectory(directory);
+        String[] fileList = directory.list();
+        if (fileList != null && fileList.length == 0) {
+            System.out.printf("All file are deleted in Directory: %s%n", directoryPath);
+        } else {
+            System.out.printf("Unable to delete the files in Directory: %s%n", directoryPath);
+        };
+        System.out.println("____________________________________________________________");
+    };
 }
