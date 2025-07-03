@@ -33,17 +33,17 @@ __I-skillo__ is a web application that allows you to connect and communicate wit
 ## II. QA TEAM MEMBERS
 
 ### QA Team:
-Skillo Best Student Rumen Kamenov<br/>
+Skillo Student - Rumen Kamenov<br/>
 Nikolay Nikolov - supervision
 
 ## III. DELIVERABLES
 1. [Master Test Plan v3.0]( )
-2. Test Cases - [CloudBaseStorage at GoogleDrive]( add link here)
+2. Test Cases - (verifyUsernameFieldPlaceholderText, CheckLoginButtonLabelText, RememberMeCheckboxFunctionality, LoginWithInvalidCredentials, LoginWithValidCredentials, LoginPageTitleIsDisplayed)
 3. [UI Automation With Selenium And Java]( )
 4. [UI Summary Report]( )
 
 ## IV. USEFUL LINKS
-1. DEV Project - http://training.skillo-bg.com:4300/users/login
+1. DEV Project - (http://training.skillo-bg.com:4300/posts/all)
 2. Bug Tracking System
 3. Full QA Documentation
 4. Manual Test Runs
@@ -56,11 +56,11 @@ Nikolay Nikolov - supervision
 To be able to run the project on localhost and run the test automations, the following programs need to be present on your machine:
 
 - Windows 11 operating system - Go to IntelliJ -> Click on testng.xml file -> Press right click mouse button to run the tests.
-- OPEN JDK 23
+- OPEN JDK 24.0.1
 - IntelliJ IDEA Ultimate Edition 2023.1.3 or later
 - MAVEN Command Line
-- Chrome latest version
-- Selenium WebDriver
+- Chrome latest version - Version 137.0.7151.122 (Official Build) (64-bit)
+- Selenium WebDriver 4.27.0
 
 ### __2. Running the automations__
 
