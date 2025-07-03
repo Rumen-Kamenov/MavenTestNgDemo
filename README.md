@@ -38,7 +38,7 @@ Nikolay Nikolov - supervision
 
 ## III. DELIVERABLES
 1. [Master Test Plan v3.0]( )
-2. Test Cases - (verifyUsernameFieldPlaceholderText, CheckLoginButtonLabelText, RememberMeCheckboxFunctionality, LoginWithInvalidCredentials, LoginWithValidCredentials, LoginPageTitleIsDisplayed)
+2. Test Cases - (verifyUsernameFieldPlaceholderText, checkLoginButtonLabelText, rememberMeCheckboxFunctionality, loginWithInvalidCredentials, loginWithValidCredentials, loginPageTitleIsDisplayed)
 3. [UI Automation With Selenium And Java]( )
 4. [UI Summary Report]( )
 
