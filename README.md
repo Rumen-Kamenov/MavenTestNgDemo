@@ -1,7 +1,7 @@
-<img align="right" src="Iskillo-logo.png" alt="Skilo Academy Logo" />
+<img align="right" src="Iskillo-logo.png" alt="Skillo Academy Logo" />
 
 
-<div align="center">
+<div align="right">
 
 # Test automation framework
 </div>
