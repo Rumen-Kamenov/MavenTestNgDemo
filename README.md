@@ -1,4 +1,4 @@
-<img align="right" src="Iskillo-logo.png" alt="Skillo Academy Logo" />
+<img align="middle" src="Iskillo-logo.png" alt="Skillo Academy Logo" />
 
 
 <div align="center">
