@@ -13,6 +13,18 @@
                     <include name="verifyUsernameFieldPlaceholderText"/>
                 </methods>
             </class>
+            <class name="org.rume.PagePost.PageTests">
+                <methods>
+                    <include name="verifyUserCanCreatePost"/>
+                    <include name="verifyUserCanDeletePost"/>
+                </methods>
+            </class>
+            <class name="org.rume.Register.RegisterTests">
+                <methods>
+                    <include name="verifyUserCanRegisterWithValidCredentials"/>
+                    <include name="verifyUserCannotRegisterWithoutFilledUserNameField"/>
+                </methods>
+            </class>
         </classes>
     </test>
 </suite>
