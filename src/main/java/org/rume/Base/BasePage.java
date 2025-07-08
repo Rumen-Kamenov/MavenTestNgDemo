@@ -21,16 +21,17 @@ public abstract class BasePage {
     public BasePage(WebDriver driver, Logger log){
         this.driver = driver;
         this.log = log;
-        wait = new WebDriverWait(driver, Duration.ofSeconds(7));
+        wait = new WebDriverWait(driver, Duration.ofSeconds(10));
     }
 
     public void navigateTo(String pageURLSUFIX) {
-        String urlToBeLoaded = BASE_URL+pageURLSUFIX;
+        String urlToBeLoaded = BASE_URL + pageURLSUFIX;
         driver.get(urlToBeLoaded);
         log.info("# CONFIRM: The user has navigated to "+ urlToBeLoaded);
     }
 
     public void clickOn(WebElement element) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(7));
         wait.until(ExpectedConditions.visibilityOf(element));
         wait.until(ExpectedConditions.elementToBeClickable(element));
         element.click();

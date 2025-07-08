@@ -68,30 +68,37 @@ public class LoginPage extends BasePage {
     }
 
     public String getLoginFormHeaderText(){
+
         return getElementText(loginFormTitle);
     }
 
     public String getUsernamePlaceHolderText(){
+
         return getElementPlaceholderValue(usernameInputField);
     }
 
     public String getPassPlaceHolderText(){
+
         return getElementPlaceholderValue(passwordInputField);
     }
 
     public String getLoginFormSubmitButtonlabel(){
+
         return getElementText(loginSubmitButton);
     }
 
     public String getLoginPageToastSuccessfullMsg(){
+
         return getElementText(signInToastMessage);
     }
 
     public String getLoginPageToastUnssecsesfullMsg(){
+
         return getElementText(wrongSignInMessage);
     }
 
     public boolean isLoginFormHeaderTextShown(){
+
         return isElementPresented(loginFormTitle);
     }
 

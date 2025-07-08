@@ -1,10 +1,12 @@
 package org.rume.Base;
 
 import org.apache.logging.log4j.Logger;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
@@ -30,12 +32,15 @@ public class RegistrationPage extends BasePage {
     private WebElement regPasswordInputField;
 
     @FindBy (id = "defaultRegisterPhonePassword")
-    private WebElement regConfirmPasswordInputField;
+    public WebElement regConfirmPasswordInputField;
+
+    @FindBy (id = "toast-message")
+    public WebElement toastMessage;
 
     @FindBy (xpath = "//textarea")
     private WebElement publicInfoTextArea;
 
-    @FindBy (id = "sign-in-button" )
+    @FindBy (id = "sign-in-button")
     private WebElement registrationFormSubmitButton;
 
     public RegistrationPage(WebDriver driver, Logger log) {
@@ -45,7 +50,7 @@ public class RegistrationPage extends BasePage {
 
     // Navigation to the page
     public void navigateToRegistrationPageByURL(){
-        navigateTo(REG_PAGE_SUFIX);
+        navigateTo("/users/register");
     }
 
     //User Actions
@@ -75,10 +80,20 @@ public class RegistrationPage extends BasePage {
         typeTextIn(publicInfoTextArea,"Public profile");
     };
 
-    public void clickOnSubmitBtn(){
-        clickOn(registrationFormSubmitButton);
+    public void provideMismatchedConfirmPassword() {
+        typeTextIn(regConfirmPasswordInputField, "DifferentPassword123!");
     }
 
+    public String getToastMessage() {
+        log.info("Fetching the toast message after form submission.");
+        return toastMessage.getText();
+    }
+
+
+    public void clickOnSubmitBtn(){
+        wait.until(ExpectedConditions.visibilityOf(registrationFormSubmitButton));
+        registrationFormSubmitButton.click();
+    }
 
     //Support methods for reg page
     public String getCurrentTime() {
