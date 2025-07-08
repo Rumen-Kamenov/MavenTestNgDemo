@@ -16,7 +16,7 @@ import java.time.Duration;
 import static org.apache.commons.io.FileUtils.cleanDirectory;
 
 public class BaseTest {
-    protected final String BASE_URL = "http://training.skillo-bg.com:4300/";
+    protected final String BASE_URL = "http://training.skillo-bg.com:4300";
     public static final String TEST_RESOURCES_DIR = "D:\\Skillo\\MavenTestNgDemo\\src\\test\\resources\\";
     public static final String SCREENSHOTS_DIR = TEST_RESOURCES_DIR.concat("screenshots\\");
     public static final String DOWNLOAD_DIR = TEST_RESOURCES_DIR.concat("download\\");
