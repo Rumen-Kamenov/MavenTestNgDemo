@@ -1,4 +1,4 @@
-package org.rume.Base;
+package org.rume.base;
 
 import org.apache.logging.log4j.Logger;
 import org.openqa.selenium.WebDriver;
@@ -9,8 +9,7 @@ import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
-import static java.util.List.of;
-import static org.rume.Base.BaseTest.DOWNLOAD_DIR;
+import static org.rume.base.BaseTest.DOWNLOAD_DIR;
 
 public class BrowserDriverFactory {
 

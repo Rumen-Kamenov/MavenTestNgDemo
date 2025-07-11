@@ -1,14 +1,13 @@
-package org.rume.Login;
+package org.rume.login;
 
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.LogManager;
 
-import org.rume.Base.BaseTest;
+import org.rume.base.BaseTest;
 import org.rume.Base.HomePage;
 import org.rume.Base.LoginPage;
 import org.testng.Assert;
 import org.testng.annotations.Test;
-
 
 
 public class LoginPageTests extends BaseTest {
@@ -94,7 +93,6 @@ public class LoginPageTests extends BaseTest {
         Assert.assertTrue(isNavBarProfileShown);
     }
 
-
     @Test
     public void loginWithInvalidCredentials() {
 
@@ -131,7 +129,6 @@ public class LoginPageTests extends BaseTest {
                 "Error message for invalid login was not displayed.");
     }
 
-
     @Test
     public void checkLoginButtonLabelText() {
 
@@ -160,7 +157,6 @@ public class LoginPageTests extends BaseTest {
         Assert.assertEquals(actualButtonLabel, LOGIN_FORM_LABEL, "Login button label is incorrect");
     }
 
-
     @Test
     public void rememberMeCheckboxFunctionality() {
         HomePage homePage = new HomePage(driver, log);
@@ -178,7 +174,6 @@ public class LoginPageTests extends BaseTest {
         log.info("STEP 4: Verify the 'Remember Me' checkbox is selected");
         Assert.assertTrue(loginPage.isRememberMeSelected(), "'Remember Me' checkbox should be selected.");
     }
-
 
     @Test
     public void verifyUsernameFieldPlaceholderText() {

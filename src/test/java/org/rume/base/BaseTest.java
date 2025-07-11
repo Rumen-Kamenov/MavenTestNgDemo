@@ -1,4 +1,4 @@
-package org.rume.Base;
+package org.rume.base;
 
 import org.apache.commons.io.FileUtils;
 import org.apache.logging.log4j.Logger;
@@ -13,11 +13,9 @@ import java.io.IOException;
 import java.lang.reflect.Method;
 import java.time.Duration;
 
-import static org.apache.commons.io.FileUtils.cleanDirectory;
-
 public class BaseTest {
-    protected final String BASE_URL = "http://training.skillo-bg.com:4300";
-    public static final String TEST_RESOURCES_DIR = "D:\\Skillo\\MavenTestNgDemo\\src\\test\\resources\\";
+
+    public static final String TEST_RESOURCES_DIR = "src\\test\\resources\\";
     public static final String SCREENSHOTS_DIR = TEST_RESOURCES_DIR.concat("screenshots\\");
     public static final String DOWNLOAD_DIR = TEST_RESOURCES_DIR.concat("download\\");
     public static final String REPORTS_DIR = TEST_RESOURCES_DIR.concat("reports\\");
