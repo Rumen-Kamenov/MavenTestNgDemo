@@ -3,7 +3,7 @@
 <suite name="All Test Suite">
     <test verbose="2" preserve-order="true" name="D:/Skillo/MavenTestNgDemo">
         <classes>
-            <class name="org.rume.Login.LoginPageTests">
+            <class name="org.rume.login.LoginPageTests">
                 <methods>
                     <include name="loginPageTitleIsDisplayed"/>
                     <include name="loginWithValidCredentials"/>
@@ -13,13 +13,13 @@
                     <include name="verifyUsernameFieldPlaceholderText"/>
                 </methods>
             </class>
-            <class name="org.rume.PagePost.PageTests">
+            <class name="org.rume.page.PageTests">
                 <methods>
                     <include name="verifyUserCanCreatePost"/>
                     <include name="verifyUserCanDeletePost"/>
                 </methods>
             </class>
-            <class name="org.rume.Register.RegisterTests">
+            <class name="org.rume.register.RegisterTests">
                 <methods>
                     <include name="verifyUserCanRegisterWithValidCredentials"/>
                     <include name="verifyUserCannotRegisterWithoutFilledUserNameField"/>
