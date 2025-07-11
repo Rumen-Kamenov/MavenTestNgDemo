@@ -1,7 +1,6 @@
 package org.rume.Base;
 
 import org.apache.logging.log4j.Logger;
-import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -14,8 +13,8 @@ import java.time.format.DateTimeFormatter;
 public class RegistrationPage extends BasePage {
 
     public static final String REG_PAGE_SUFIX = "/users/register";
-    private static final String EXPECTED_REG_FORM_HEADER_TEXT = "Sign up";
-    private static final String EXPECTED_REG_MSG = "Successful register!";
+    public static final String EXPECTED_REG_FORM_HEADER_TEXT = "Sign up";
+    public static final String EXPECTED_REG_MSG = "Successful register!";
 
     //2.LOCATORS
     //Registration form
@@ -36,6 +35,9 @@ public class RegistrationPage extends BasePage {
 
     @FindBy (id = "toast-message")
     public WebElement toastMessage;
+
+    @FindBy(css = "h4")
+    private WebElement regFormTitle;
 
     @FindBy (xpath = "//textarea")
     private WebElement publicInfoTextArea;
@@ -95,6 +97,10 @@ public class RegistrationPage extends BasePage {
         registrationFormSubmitButton.click();
     }
 
+    public String getRegFormHeaderText(){
+        return getElementText(regFormTitle);
+    }
+
     //Support methods for reg page
     public String getCurrentTime() {
         LocalDateTime now = LocalDateTime.now();
@@ -102,7 +108,6 @@ public class RegistrationPage extends BasePage {
         String formattedDateTime = now.format(formatter);
         return formattedDateTime;
     }
-
 
     //Support utils for test data gen
     public String demoUsername() {
