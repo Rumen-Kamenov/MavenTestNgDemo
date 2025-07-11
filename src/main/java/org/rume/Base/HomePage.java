@@ -16,6 +16,9 @@ public class HomePage extends BasePage {
     @FindBy(id = "nav-link-login")
     private WebElement navBarLoginLink;
 
+    @FindBy(css = "i")
+    private WebElement navBarLogoutLink;
+
     @FindBy(id = "nav-link-profile")
     private WebElement navBarProfileLink;
 
